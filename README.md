@@ -1,7 +1,5 @@
 # Getting Started with Create React App
 
-![Status](https://github.com/b000gt/test-page/actions/workflows/pages-build-deployment.yml/badge.svg)
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
