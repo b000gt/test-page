@@ -1,6 +1,12 @@
 # Getting Started with Create React App
 
+[Page](https://b000gt.github.io/test-page/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Custom scripts
+
+`npm run deploy` deploys to https://b000gt.github.io/test-page/
 
 ## Available Scripts
 
