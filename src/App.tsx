@@ -1,25 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Images from "./Images";
 
 function App() {
+  const [showImage, setShowImage] = useState<boolean>(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello Marc</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="container">
+      <h1>H1</h1>
+      <h2>H2</h2>
+      <h3>H3</h3>
+      <h4>H4</h4>
+      <h5>H5</h5>
+      <h6>H6</h6>
+      <pre>Pre</pre>
+      <code>Code</code>
+      <pre>
+        <code>Code in pre</code>
+      </pre>
+      <p className="lead">Open an image by clickling</p>
+      <div className="btn-group btn-group-vertical">
+        <button
+          className="btn btn-primary mb-2"
+          type="button"
+          onClick={() => setShowImage(!showImage)}
         >
-          Learn React
-        </a>
-      </header>
+          Open image
+        </button>
+      </div>
+      {showImage && <Images />}
+      <div className="jumbotron">this is riveting</div>
     </div>
   );
 }

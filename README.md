@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# github pages test
 
 [Page](https://b000gt.github.io/test-page/)
 
