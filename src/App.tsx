@@ -3,51 +3,49 @@ import { Alert, ButtonGroup, Button } from "react-bootstrap";
 
 function App() {
   const [message, setMessage] = useState<string>("");
-  const [isBroken, setIsBroken] = useState<boolean>(false);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    setMessage((e.target as HTMLInputElement).value);
+    if ((e.target as HTMLInputElement).value === message) {
+      setMessage("");
+    } else {
+      setMessage((e.target as HTMLInputElement).value);
+    }
   };
 
   return (
-    <>
-      {isBroken && (
-        <Alert variant="danger">
-          <h1>Uh oh, you broke the website!</h1>
-          <p>But don't worry. It's going to be okay.</p>
-        </Alert>
-      )}
-      {!isBroken && (
-        <div className="container pt-4">
-          <Alert variant="success">Yayy, I did it!</Alert>
-          <ButtonGroup>
-            <Button
-              variant="outline-success"
-              value="I love you"
-              onClick={handleClick}
-            >
-              Meli
-            </Button>
-            <Button
-              variant="outline-warning"
-              onClick={handleClick}
-              value="WTF are you doing here?"
-            >
-              Someone else
-            </Button>
-            <Button
-              variant="outline-danger"
-              onClick={() => setIsBroken(true)}
-              value="Uh oh, you broke the website :("
-            >
-              Mäge
-            </Button>
-          </ButtonGroup>
+    <div className="container pt-4">
+      <Alert variant="success">Yayy, I did it!</Alert>
+      <div style={{ height: "30rem", width: "100%", position: "relative" }}>
+        <div className="duotone-before" />
+        <div className="duotone" />
+        <div className="duotone-after" />
+      </div>
+      <ButtonGroup>
+        <Button
+          variant="outline-success"
+          value="I love you"
+          onClick={handleClick}
+        >
+          Meli
+        </Button>
+        <Button
+          variant="outline-warning"
+          onClick={handleClick}
+          value="WTF are you doing here?"
+        >
+          Someone else
+        </Button>
+        <Button
+          variant="outline-danger"
+          onClick={handleClick}
+          value="Uh oh, you broke the website :("
+        >
+          Mäge
+        </Button>
+      </ButtonGroup>
 
-          {message && <p>{message}</p>}
-        </div>
-      )}
-    </>
+      {message && <p>{message}</p>}
+    </div>
   );
 }
 
